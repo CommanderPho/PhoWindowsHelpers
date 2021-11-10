@@ -1,18 +1,31 @@
 @REM Creates a Windows shortcut by generating a temporary Visual Basic .vbs file, running it, and then deleting it to clean up.
 @REM 2021-11-10 - Solution from https://stackoverflow.com/questions/30028709/how-do-i-create-a-shortcut-via-command-line-in-windows
 @REM Requres no 3rd Party Dependencies, entirely self-contained
-@REM 
-set "curr_env_name=NeuroPy"
-set "start_in_dir=%%HOMEPATH%%"
-@REM set shortcut_target=C:\Users\Pho\anaconda3\python.exe C:\Users\Pho\anaconda3\cwp.py C:\Users\Pho\anaconda3\envs\%curr_env_name% C:\Users\Pho\anaconda3\envs\%curr_env_name%\python.exe C:\Users\Pho\anaconda3\envs\%curr_env_name%\Scripts\jupyter-lab-script.py ""%USERPROFILE%/""
-@REM set shortcut_target=C:\Users\Pho\anaconda3\python.exe C:\Users\Pho\anaconda3\cwp.py C:\Users\Pho\anaconda3\envs\%curr_env_name% C:\Users\Pho\anaconda3\envs\%curr_env_name%\python.exe C:\Users\Pho\anaconda3\envs\%curr_env_name%\Scripts\jupyter-lab-script.py ""%%USERPROFILE%%/""
-set "shortcut_target=C:\Users\Pho\anaconda3\python.exe"
 @REM Note that Visual Basic escapes double quotes using another double quote, hence the two quotes before and after  ""%USERPROFILE%/""
+@REM 
+set "curr_conda_env_name=NeuroPy"
 
-set shortcut_arguments=C:\Users\Pho\anaconda3\cwp.py C:\Users\Pho\anaconda3\envs\%curr_env_name% C:\Users\Pho\anaconda3\envs\%curr_env_name%\python.exe C:\Users\Pho\anaconda3\envs\%curr_env_name%\Scripts\jupyter-lab-script.py ""%%USERPROFILE%%/""
-set "shortcut_name=(%curr_env_name%) Jupyter-lab"
-set "shortcut_icon=%USERPROFILE%\anaconda3\envs\viz3d\Menu\jupyter.ico"
+@REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@REM "Jupyter-lab" Shortcut:
+@REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+set "start_in_dir=%%HOMEPATH%%"
+set "shortcut_target=C:\Users\Pho\anaconda3\python.exe"
+set shortcut_arguments=C:\Users\Pho\anaconda3\cwp.py C:\Users\Pho\anaconda3\envs\%curr_conda_env_name% C:\Users\Pho\anaconda3\envs\%curr_conda_env_name%\python.exe C:\Users\Pho\anaconda3\envs\%curr_conda_env_name%\Scripts\jupyter-lab-script.py ""%%USERPROFILE%%/""
+set "shortcut_name=(%curr_conda_env_name%) Jupyter-lab"
+set "shortcut_icon=%USERPROFILE%\anaconda3\Menu\jupyter.ico"
 set "shortcut_comment=%shortcut_name%"
+
+@REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@REM "Anaconda Prompt" Shortcut:
+@REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+set "start_in_dir=%%HOMEPATH%%"
+set "shortcut_target=%windir%\System32\cmd.exe"
+@REM Note that Visual Basic escapes double quotes using another double quote, hence the two quotes before and after  ""%USERPROFILE%/""
+set shortcut_arguments=""/K"" C:\Users\Pho\anaconda3\Scripts\activate.bat C:\Users\Pho\anaconda3\envs\%curr_conda_env_name%
+set "shortcut_name=(%curr_conda_env_name%) Anaconda Prompt"
+set "shortcut_icon=%USERPROFILE%\anaconda3\Menu\Iconleak-Atrous-Console.ico"
+set "shortcut_comment=%shortcut_name%"
+
 
 @echo off
 @REM cd c:\MyApp
