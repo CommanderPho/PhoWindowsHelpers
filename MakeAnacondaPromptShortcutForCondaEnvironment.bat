@@ -15,16 +15,16 @@ set "shortcut_name=(%curr_conda_env_name%) Jupyter-lab"
 set "shortcut_icon=%USERPROFILE%\anaconda3\Menu\jupyter.ico"
 set "shortcut_comment=%shortcut_name%"
 
-@REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-@REM "Anaconda Prompt" Shortcut:
-@REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-set "start_in_dir=%%HOMEPATH%%"
-set "shortcut_target=%windir%\System32\cmd.exe"
-@REM Note that Visual Basic escapes double quotes using another double quote, hence the two quotes before and after  ""%USERPROFILE%/""
-set shortcut_arguments=""/K"" C:\Users\Pho\anaconda3\Scripts\activate.bat C:\Users\Pho\anaconda3\envs\%curr_conda_env_name%
-set "shortcut_name=(%curr_conda_env_name%) Anaconda Prompt"
-set "shortcut_icon=%USERPROFILE%\anaconda3\Menu\Iconleak-Atrous-Console.ico"
-set "shortcut_comment=%shortcut_name%"
+@REM @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@REM @REM "Anaconda Prompt" Shortcut:
+@REM @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@REM set "start_in_dir=%%HOMEPATH%%"
+@REM set "shortcut_target=%windir%\System32\cmd.exe"
+@REM @REM Note that Visual Basic escapes double quotes using another double quote, hence the two quotes before and after  ""%USERPROFILE%/""
+@REM set shortcut_arguments=""/K"" C:\Users\Pho\anaconda3\Scripts\activate.bat C:\Users\Pho\anaconda3\envs\%curr_conda_env_name%
+@REM set "shortcut_name=(%curr_conda_env_name%) Anaconda Prompt"
+@REM set "shortcut_icon=%USERPROFILE%\anaconda3\Menu\Iconleak-Atrous-Console.ico"
+@REM set "shortcut_comment=%shortcut_name%"
 
 
 @echo off
@@ -32,7 +32,13 @@ set "shortcut_comment=%shortcut_name%"
 @REM cd "%start_in_dir%"
 echo Set oWS = WScript.CreateObject("WScript.Shell") > CreateShortcut.vbs
 @REM echo sLinkFile = "%userprofile%\Desktop\MyApp.lnk" >> CreateShortcut.vbs
-echo sLinkFile = "%userprofile%\Desktop\%shortcut_name%.lnk" >> CreateShortcut.vbs
+@REM @REM Creates link on **User's Desktop**:
+@REM echo sLinkFile = "%userprofile%\Desktop\%shortcut_name%.lnk" >> CreateShortcut.vbs
+
+@REM Creates link in **Anaconda's Start Menu folder**:
+@REM 	%APPDATA%\Microsoft\Windows\Start Menu\Programs		(e.g. C:\Users\Pho\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Anaconda3 (64-bit))
+echo sLinkFile = "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Anaconda3 (64-bit)\%shortcut_name%.lnk" >> CreateShortcut.vbs
+
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> CreateShortcut.vbs
 @REM echo oLink.TargetPath = "C:\MyApp\MyApp.bat" >> CreateShortcut.vbs
 echo oLink.TargetPath = "%shortcut_target%" >> CreateShortcut.vbs
