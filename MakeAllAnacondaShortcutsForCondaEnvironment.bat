@@ -8,17 +8,17 @@
 @REM 	Example 2: MakeAllAnacondaShortcutsForCondaEnvironment.bat phoviz
 
 
-@REM @echo off
-@REM @REM Check for argument:
-@REM IF %1.==. GOTO No1
-@REM set arg1=%1
-@REM set "curr_conda_env_name=%arg1%"
-@REM @REM echo %curr_conda_env_name%
+@echo off
+@REM Check for argument:
+IF %1.==. GOTO No1
+set arg1=%1
+set "curr_conda_env_name=%arg1%"
+@REM echo %curr_conda_env_name%
 
 @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @REM "Jupyter-Lab" Shortcut:
 @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MakeJupyterLabShortcutForCondaEnvironment.bat %1
+call MakeJupyterLabShortcutForCondaEnvironment.bat %curr_conda_env_name%
 echo "done with Jupyter-lab shortcut"
 
 
@@ -26,16 +26,14 @@ echo "done with Jupyter-lab shortcut"
 @REM "Anaconda Prompt" Shortcut:
 @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @REM MakeAnacondaPromptShortcutForCondaEnvironment.bat %curr_conda_env_name%
-MakeAnacondaPromptShortcutForCondaEnvironment.bat %1
+call MakeAnacondaPromptShortcutForCondaEnvironment.bat %curr_conda_env_name%
 echo "done with Anaconda prompt shortcut"
 
+GOTO End1
 
+:No1
+  ECHO No param 1
+GOTO End1
 
-@REM GOTO End2
-
-@REM :No1
-@REM   ECHO No param 1
-@REM GOTO End2
-
-@REM :End2
-@REM 	echo "done."
+:End1
+	echo "done with all."
