@@ -12,7 +12,7 @@
 IF %1.==. GOTO No1
 set arg1=%1
 set "curr_conda_env_name=%arg1%"
-echo %curr_conda_env_name%
+@REM echo %curr_conda_env_name%
 
 @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @REM "Anaconda Prompt" Shortcut:
@@ -59,4 +59,4 @@ GOTO End1
 GOTO End1
 
 :End1
-	echo "done."
+	@REM echo "done."

@@ -3,7 +3,16 @@
 @REM Requres no 3rd Party Dependencies, entirely self-contained
 @REM Note that Visual Basic escapes double quotes using another double quote, hence the two quotes before and after  ""%USERPROFILE%/""
 @REM 
-set "curr_conda_env_name=NeuroPy"
+@REM Usage Examples: MakeJupyterLabShortcutForCondaEnvironment.bat PyQt6
+@REM 	Example 2: MakeJupyterLabShortcutForCondaEnvironment.bat phoviz
+
+
+@echo off
+@REM Check for argument:
+IF %1.==. GOTO No1
+set arg1=%1
+set "curr_conda_env_name=%arg1%"
+@REM echo %curr_conda_env_name%
 
 @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @REM "Jupyter-lab" Shortcut:
@@ -42,3 +51,14 @@ echo oLink.IconLocation = "%shortcut_icon%" >> TempCreateShortcut.vbs
 echo oLink.Save >> TempCreateShortcut.vbs
 cscript TempCreateShortcut.vbs
 del TempCreateShortcut.vbs
+
+GOTO End1
+
+:No1
+  ECHO No param 1
+GOTO End1
+
+:End1
+	@REM echo "done."
+
+
