@@ -25,9 +25,16 @@ echo "done with Jupyter-lab shortcut"
 @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @REM "Anaconda Prompt" Shortcut:
 @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-@REM MakeAnacondaPromptShortcutForCondaEnvironment.bat %curr_conda_env_name%
 call MakeAnacondaPromptShortcutForCondaEnvironment.bat %curr_conda_env_name%
 echo "done with Anaconda prompt shortcut"
+
+
+@REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@REM "Spyder" Shortcut:
+@REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+call MakeSpyderShortcutForCondaEnvironment.bat %curr_conda_env_name%
+echo "done with Spyder shortcut"
+
 
 GOTO End1
 
