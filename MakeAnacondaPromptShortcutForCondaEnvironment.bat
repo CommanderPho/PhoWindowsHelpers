@@ -3,7 +3,16 @@
 @REM Requres no 3rd Party Dependencies, entirely self-contained
 @REM Note that Visual Basic escapes double quotes using another double quote, hence the two quotes before and after  ""%USERPROFILE%/""
 @REM 
-set "curr_conda_env_name=NeuroPy"
+@REM set "curr_conda_env_name=phoviz"
+@REM Usage Examples: MakeAnacondaPromptShortcutForCondaEnvironment.bat PyQt6
+@REM 	Example 2: MakeAnacondaPromptShortcutForCondaEnvironment.bat phoviz
+
+@echo off
+@REM Check for argument:
+IF %1.==. GOTO No1
+set arg1=%1
+set "curr_conda_env_name=%arg1%"
+echo %curr_conda_env_name%
 
 @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @REM "Anaconda Prompt" Shortcut:
@@ -15,8 +24,7 @@ set "shortcut_name=(%curr_conda_env_name%) Anaconda Prompt"
 set "shortcut_icon=%USERPROFILE%\anaconda3\Menu\Iconleak-Atrous-Console.ico"
 set "shortcut_comment=%shortcut_name%"
 
-
-@echo off
+@REM @echo off
 @REM cd c:\MyApp
 @REM cd "%start_in_dir%"
 echo Set oWS = WScript.CreateObject("WScript.Shell") > TempCreateShortcut.vbs
@@ -43,3 +51,12 @@ echo oLink.IconLocation = "%shortcut_icon%" >> TempCreateShortcut.vbs
 echo oLink.Save >> TempCreateShortcut.vbs
 cscript TempCreateShortcut.vbs
 del TempCreateShortcut.vbs
+
+GOTO End1
+
+:No1
+  ECHO No param 1
+GOTO End1
+
+:End1
+	echo "done."
