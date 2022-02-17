@@ -18,8 +18,8 @@ set "curr_conda_env_name=%arg1%"
 @REM "Jupyter-lab" Shortcut:
 @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 set "start_in_dir=%%HOMEPATH%%"
-set "shortcut_target=C:\Users\Pho\anaconda3\python.exe"
-set shortcut_arguments=C:\Users\Pho\anaconda3\cwp.py C:\Users\Pho\anaconda3\envs\%curr_conda_env_name% C:\Users\Pho\anaconda3\envs\%curr_conda_env_name%\python.exe C:\Users\Pho\anaconda3\envs\%curr_conda_env_name%\Scripts\jupyter-lab-script.py ""%%USERPROFILE%%/""
+set "shortcut_target=C:\Users\pho\miniconda3\python.exe"
+set shortcut_arguments=C:\Users\pho\miniconda3\cwp.py C:\Users\pho\miniconda3\envs\%curr_conda_env_name% C:\Users\pho\miniconda3\envs\%curr_conda_env_name%\python.exe C:\Users\pho\miniconda3\envs\%curr_conda_env_name%\Scripts\jupyter-lab-script.py ""%%USERPROFILE%%/""
 set "shortcut_name=(%curr_conda_env_name%) Jupyter-lab"
 set "shortcut_icon=%USERPROFILE%\anaconda3\Menu\jupyter.ico"
 set "shortcut_comment=%shortcut_name%"
@@ -33,7 +33,7 @@ echo Set oWS = WScript.CreateObject("WScript.Shell") > TempCreateShortcut.vbs
 @REM echo sLinkFile = "%userprofile%\Desktop\%shortcut_name%.lnk" >> TempCreateShortcut.vbs
 
 @REM Creates link in **Anaconda's Start Menu folder**:
-@REM 	%APPDATA%\Microsoft\Windows\Start Menu\Programs		(e.g. C:\Users\Pho\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Anaconda3 (64-bit))
+@REM 	%APPDATA%\Microsoft\Windows\Start Menu\Programs		(e.g. C:\Users\pho\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Anaconda3 (64-bit))
 echo sLinkFile = "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Anaconda3 (64-bit)\%shortcut_name%.lnk" >> TempCreateShortcut.vbs
 
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> TempCreateShortcut.vbs

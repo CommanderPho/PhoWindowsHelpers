@@ -19,9 +19,9 @@ set "curr_conda_env_name=%arg1%"
 @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 set "start_in_dir=%%HOMEPATH%%"
 set "shortcut_target=%windir%\System32\cmd.exe"
-set shortcut_arguments=""/K"" C:\Users\Pho\anaconda3\Scripts\activate.bat C:\Users\Pho\anaconda3\envs\%curr_conda_env_name%
+set shortcut_arguments=""/K"" C:\Users\pho\miniconda3\Scripts\activate.bat C:\Users\pho\miniconda3\envs\%curr_conda_env_name%
 set "shortcut_name=(%curr_conda_env_name%) Anaconda Prompt"
-set "shortcut_icon=%USERPROFILE%\anaconda3\Menu\Iconleak-Atrous-Console.ico"
+set "shortcut_icon=%USERPROFILE%\miniconda3\Menu\Iconleak-Atrous-Console.ico"
 set "shortcut_comment=%shortcut_name%"
 
 @REM @echo off

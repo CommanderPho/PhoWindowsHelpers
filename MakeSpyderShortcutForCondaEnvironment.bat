@@ -7,7 +7,7 @@
 @REM 	Example 2: MakeSpyderShortcutForCondaEnvironment.bat phoviz
 
 @REM Example command for launching Spyder in the "Py3Qt5" environment
-@REM C:\Users\Pho\anaconda3\pythonw.exe C:\Users\Pho\anaconda3\cwp.py C:\Users\Pho\anaconda3\envs\Py3Qt5 C:\Users\Pho\anaconda3\envs\Py3Qt5\pythonw.exe C:\Users\Pho\anaconda3\envs\Py3Qt5\Scripts\spyder-script.py
+@REM C:\Users\pho\miniconda3\pythonw.exe C:\Users\pho\miniconda3\cwp.py C:\Users\pho\miniconda3\envs\Py3Qt5 C:\Users\pho\miniconda3\envs\Py3Qt5\pythonw.exe C:\Users\pho\miniconda3\envs\Py3Qt5\Scripts\spyder-script.py
 
 
 @echo off
@@ -21,10 +21,10 @@ set "curr_conda_env_name=%arg1%"
 @REM "Jupyter-lab" Shortcut:
 @REM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 set "start_in_dir=%%HOMEPATH%%"
-set "shortcut_target=C:\Users\Pho\anaconda3\pythonw.exe"
-set shortcut_arguments=C:\Users\Pho\anaconda3\cwp.py C:\Users\Pho\anaconda3\envs\%curr_conda_env_name% C:\Users\Pho\anaconda3\envs\%curr_conda_env_name%\pythonw.exe C:\Users\Pho\anaconda3\envs\%curr_conda_env_name%\Scripts\spyder-script.py
+set "shortcut_target=C:\Users\pho\miniconda3\pythonw.exe"
+set shortcut_arguments=C:\Users\pho\miniconda3\cwp.py C:\Users\pho\miniconda3\envs\%curr_conda_env_name% C:\Users\pho\miniconda3\envs\%curr_conda_env_name%\pythonw.exe C:\Users\pho\miniconda3\envs\%curr_conda_env_name%\Scripts\spyder-script.py
 set "shortcut_name=(%curr_conda_env_name%) Spyder"
-set "shortcut_icon=%USERPROFILE%\anaconda3\Scripts\spyder.ico"
+set "shortcut_icon=%USERPROFILE%\miniconda3\Scripts\spyder.ico"
 set "shortcut_comment=%shortcut_name%"
 @echo off
 @REM cd c:\MyApp
