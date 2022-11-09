@@ -21,7 +21,7 @@ set "start_in_dir=%%HOMEPATH%%"
 set "shortcut_target=C:\Users\pho\miniconda3\python.exe"
 set shortcut_arguments=C:\Users\pho\miniconda3\cwp.py C:\Users\pho\miniconda3\envs\%curr_conda_env_name% C:\Users\pho\miniconda3\envs\%curr_conda_env_name%\python.exe C:\Users\pho\miniconda3\envs\%curr_conda_env_name%\Scripts\jupyter-lab-script.py ""%%USERPROFILE%%/""
 set "shortcut_name=(%curr_conda_env_name%) Jupyter-lab"
-set "shortcut_icon=%USERPROFILE%\anaconda3\Menu\jupyter.ico"
+set "shortcut_icon=%USERPROFILE%\miniconda3\Menu\jupyter.ico"
 set "shortcut_comment=%shortcut_name%"
 
 @echo off
