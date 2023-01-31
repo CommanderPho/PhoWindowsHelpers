@@ -1,0 +1,55 @@
+name: py38min
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - bzip2=1.0.8
+  - ca-certificates=2022.6.15
+  - click=8.1.3
+  - colorama=0.4.5
+  - libffi=3.4.2
+  - libzlib=1.2.12
+  - openssl=3.0.3
+  - pep517=0.12.0
+  - pip=22.1.2
+  - pip-tools=6.6.2
+  - python=3.8.13
+  - python_abi=3.8
+  - setuptools=62.6.0
+  - sqlite=3.38.5
+  - tk=8.6.12
+  - tomli=2.0.1
+  - ucrt=10.0.20348.0
+  - vc=14.2
+  - vs2015_runtime=14.29.30037
+  - wheel=0.37.1
+  - xz=5.2.5
+  - pip:
+    - cycler==0.11.0
+    - dvg-debug-functions==2.1.1
+    - dvg-devices==1.1.0
+    - dvg-pid-controller==2.1.0
+    - dvg-pyqt-controls==1.1.0
+    - dvg-pyqt-filelogger==1.1.0
+    - dvg-pyqtgraph-threadsafe==3.1.0
+    - dvg-qdeviceio==1.0.0
+    - dvg-ringbuffer==1.0.3
+    - fonttools==4.33.3
+    - kiwisolver==1.4.3
+    - matplotlib==3.5.2
+    - numpy==1.22.4
+    - packaging==21.3
+    - pillow==9.1.1
+    - psutil==5.9.1
+    - pyopengl==3.1.6
+    - pyparsing==3.0.9
+    - pyqt5==5.15.7
+    - pyqt5-qt5==5.15.2
+    - pyqt5-sip==12.11.0
+    - pyqtgraph==0.11.1
+    - pyserial==3.5
+    - python-dateutil==2.8.2
+    - pyvisa==1.12.0
+    - six==1.16.0
+    - typing-extensions==4.2.0
+prefix: C:\Users\pho\miniconda3\envs\py38min

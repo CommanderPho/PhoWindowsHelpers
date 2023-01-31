@@ -1,0 +1,14 @@
+# conda environments:
+#
+base                     C:\Users\pho\miniconda3
+PyQt5                    C:\Users\pho\miniconda3\envs\PyQt5
+PyQt6                    C:\Users\pho\miniconda3\envs\PyQt6
+cnn_ripple_20221127      C:\Users\pho\miniconda3\envs\cnn_ripple_20221127
+nest_sim                 C:\Users\pho\miniconda3\envs\nest_sim
+phoviz_ultimate          C:\Users\pho\miniconda3\envs\phoviz_ultimate
+py2_emotiv_epoc          C:\Users\pho\miniconda3\envs\py2_emotiv_epoc
+py311                 *  C:\Users\pho\miniconda3\envs\py311
+py38min                  C:\Users\pho\miniconda3\envs\py38min
+qwe                      C:\Users\pho\miniconda3\envs\qwe
+sd-inf                   C:\Users\pho\miniconda3\envs\sd-inf
+
