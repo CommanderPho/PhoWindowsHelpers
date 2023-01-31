@@ -3,6 +3,22 @@ import re
 import os
 #modified from https://github.com/conda/conda/issues/5165
 
+## Can use `mamba install conda-minify -c jamespreed`
+
+def setup_conda_minify():
+    original_dir = os.getcwd()
+    libs_directory = "libs" #change to your preferred directory location
+    if not os.path.exists(libs_directory):
+        os.makedirs(libs_directory)
+    os.chdir(libs_directory)
+    sub.check_call(" ".join(['git','clone','https://github.com/jamespreed/conda-minify.git']),shell=True)
+    os.chdir("conda-minify")
+    # can be called using: python -m conda_minify
+    os.chdir(original_dir) # restore original dir
+
+# setup_conda_minify()
+
+
 # create list of current environments
 sub.check_call(" ".join(['conda','env','list','>','envs.txt']),shell=True)
 
