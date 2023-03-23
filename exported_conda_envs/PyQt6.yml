@@ -26,7 +26,6 @@ dependencies:
   - cfgv=3.3.1
   - chardet=4.0.0
   - charset-normalizer=2.0.0
-  - click=8.0.3
   - colorama=0.4.4
   - commonmark=0.9.1
   - configparser=5.1.0
@@ -218,6 +217,7 @@ dependencies:
     - astroid==2.11.7
     - atomicwrites==1.4.1
     - attrs==22.1.0
+    - click==7.1.2
     - coverage==6.4.4
     - dill==0.3.5.1
     - iniconfig==1.1.1
@@ -233,7 +233,7 @@ dependencies:
     - pyparsing==3.0.9
     - pyqt5==5.15.7
     - pyqt5-qt5==5.15.2
-    - pyqt5-sip==4.19.18
+    - pyqt5-sip==12.11.0
     - pyqt6==6.3.1
     - pyqt6-qt6==6.3.1
     - pyqt6-sip==13.4.0
@@ -243,6 +243,8 @@ dependencies:
     - pyside6-essentials==6.3.1
     - pytest==7.1.2
     - pytest-cov==3.0.0
+    - qt5-applications==5.15.2.2.2
+    - qt5-tools==5.15.2.1.2
     - setuptools==65.3.0
     - shiboken2==5.15.2.1
     - shiboken6==6.3.1

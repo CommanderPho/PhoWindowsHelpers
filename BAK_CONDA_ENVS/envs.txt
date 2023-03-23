@@ -1,0 +1,22 @@
+# conda environments:
+#
+                         C:\Users\pho\mambaforge
+                         C:\Users\pho\miniconda3
+                         C:\Users\pho\miniconda3\envs\Img2SoundEnv
+                         C:\Users\pho\miniconda3\envs\NeuroPy
+                         C:\Users\pho\miniconda3\envs\PyQt5
+                         C:\Users\pho\miniconda3\envs\PyQt6
+                         C:\Users\pho\miniconda3\envs\PySide2
+                         C:\Users\pho\miniconda3\envs\blea
+                         C:\Users\pho\miniconda3\envs\canvas_tools
+                         C:\Users\pho\miniconda3\envs\cnn-new-env
+base                  *  C:\Users\pho\miniconda3\envs\phoviz_ultimate
+cnn-ripple               C:\Users\pho\miniconda3\envs\phoviz_ultimate\envs\cnn-ripple
+icloud_utils_testing     C:\Users\pho\miniconda3\envs\phoviz_ultimate\envs\icloud_utils_testing
+py39                     C:\Users\pho\miniconda3\envs\phoviz_ultimate\envs\py39
+pypdf                    C:\Users\pho\miniconda3\envs\phoviz_ultimate\envs\pypdf
+                         C:\Users\pho\miniconda3\envs\py2_emotiv_epoc
+                         C:\Users\pho\miniconda3\envs\py38min
+                         C:\Users\pho\miniconda3\envs\qwe
+                         C:\Users\pho\miniconda3\envs\sd-inf
+
