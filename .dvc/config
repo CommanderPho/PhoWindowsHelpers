@@ -1,0 +1,5 @@
+[core]
+    remote = phoumichgdrive
+['remote "phoumichgdrive"']
+    url = gdrive://12HkM5dUehnfkxKEmG_-iYGghObSaEL0H
+    gdrive_acknowledge_abuse = true
