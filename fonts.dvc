@@ -1,0 +1,6 @@
+outs:
+- md5: 43e9ad60e19feb6f662da7e0bdee4842.dir
+  size: 123070852
+  nfiles: 96
+  hash: md5
+  path: fonts
