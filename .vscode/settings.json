@@ -1,0 +1,22 @@
+{
+		"files.exclude": {
+			"**/.classpath": true,
+			"**/.factorypath": true,
+			"**/.ipynb_checkpoints": true,
+			"**/.project": true,
+			"**/.settings": true,
+			"**/.spyproject": true,
+			"**/.virtual_documents": true,
+			"**/.vscode": true,
+			"**/*.7z": true,
+			"**/Spike3D/.venv/*": true
+		},
+		"python.analysis.logLevel": "Error",
+		"workbench.colorCustomizations": {
+			"editor.lineHighlightBackground": "#1073cf2d",
+			"editor.lineHighlightBorder": "#9fced11f",
+			"activityBar.background": "#23364b",
+			"titleBar.activeBackground": "#00ccff",
+			"titleBar.activeForeground": "#000000"
+		},
+}
