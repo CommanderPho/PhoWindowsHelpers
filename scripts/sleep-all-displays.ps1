@@ -1,0 +1,1 @@
+& nircmd.exe monitor off
