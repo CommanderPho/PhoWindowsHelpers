@@ -7,19 +7,24 @@ Hotstring("EndChars", "`s`t") ; only expand after plain spaces or tabs
 #HotIf WinActive("ahk_exe Obsidian.exe")
 ; only defined in Obsidian
 
+:://timenow::  ; This hotstring replaces "]d" with the current date and time via the functions below.
+{
+    SendInput "//" . FormatTime(, "yyyy-MM-dd h:mmt")  . ": "  ; It will look like 9/1/2005 53P
+}
+
 :://datenow::  ; This hotstring replaces "]d" with the current date and time via the functions below.
 {
-    SendInput "//" . FormatTime(, "yyyy-M-d h:mm tt")  . ": "  ; It will look like 9/1/2005 3:53 PM
+    SendInput "//" . FormatTime(, "yyyy-MM-dd h:mmt")  . ": "  ; It will look like 9/1/2005 53P
 }
 
 :://now::  ; This hotstring replaces "]d" with the current date and time via the functions below.
 {
-    SendInput "//" . FormatTime(, "h:mm tt")  . ": " ; It will look like 9/1/2005 3:53 PM
+    SendInput "//" . FormatTime(, "h:mmt")  . ": " ; It will look like 9/1/2005 53P
 }
 
 ::.now::  ; This hotstring replaces "]d" with the current date and time via the functions below.
 {
-    SendInput FormatTime(, "h:mm tt") . ": " ; It will look like 9/1/2005 3:53 PM
+    SendInput FormatTime(, "h:mmt") . ": " ; It will look like 9/1/2005 3:53P
 }
 
 #HotIf
