@@ -1,0 +1,12 @@
+{
+  "hive": "HKCR",
+  "path": "AllFileSystemObjects\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)",
+  "tree": {
+    "__values__": {
+      "": {
+        "type": 1,
+        "data": "[CC]{0229E5E7-09E9-45CF-9228-0228EC7D5F17}"
+      }
+    }
+  }
+}
