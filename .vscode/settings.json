@@ -19,4 +19,5 @@
 			"titleBar.activeBackground": "#00ccff",
 			"titleBar.activeForeground": "#000000"
 		},
+		"cursorpyright.analysis.logLevel": "Error",
 }
