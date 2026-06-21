@@ -33,8 +33,9 @@ if (Stop-SshTunnelOnPort -LocalPort $LocalPort) {
 Write-Host "Starting SSH tunnel on port $LocalPort -> ${remoteHost}:${remotePort} via ${username}@${gateway} ..."
 Start-SshTunnelInteractive -SshCommand $SshCommand
 
-if (-not (Wait-SshTunnelReady -LocalPort $LocalPort -TimeoutSeconds 10)) {
-    Write-Error "SSH tunnel did not become ready on port $LocalPort after authentication. Auth may have succeeded but the tunnel failed to bind; retry or run manually in CMD: $SshCommand"
+Write-Host "Waiting for tunnel on port $LocalPort (complete SSH login above) ..."
+if (-not (Wait-SshTunnelReady -LocalPort $LocalPort -TimeoutSeconds 180)) {
+    Write-Error "SSH tunnel did not become ready on port $LocalPort within 3 minutes. Complete login prompts above or check credentials/VPN. Command: $SshCommand"
     exit 1
 }
 

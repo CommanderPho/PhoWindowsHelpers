@@ -1226,6 +1226,14 @@ def extract_vnc_info(page: Page) -> dict:
     return {"ssh_command": ssh_command, "local_port": local_port, "vnc_password": vnc_password}
 
 
+def print_vnc_info(info: dict) -> None:
+    print("Extracted VNC connection info:")
+    print(f"SSH command: {info['ssh_command']}")
+    print(f"Local port: {info['local_port']}")
+    print(f"VNC password: {info['vnc_password']}")
+    print()
+
+
 def connect_vnc(info: dict) -> None:
     ps_script = Path(__file__).parent / "connect_supercomputer_VNC.ps1"
     subprocess.run(["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(ps_script), "-SshCommand", info["ssh_command"], "-LocalPort", str(info["local_port"]), "-VncPassword", info["vnc_password"]], check=True)
@@ -1238,6 +1246,7 @@ def main() -> None:
         page.set_content(html_content)
         info = extract_vnc_info(page)
         browser.close()
+    print_vnc_info(info)
     connect_vnc(info)
 
 

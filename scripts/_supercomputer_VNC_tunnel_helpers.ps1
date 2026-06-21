@@ -46,13 +46,10 @@ function Start-SshTunnelInteractive {
     Write-Host ""
     Write-Host "=== SSH login required ==="
     Write-Host "Enter your password, then complete Okta 2FA (push/passcode + number challenge)."
+    Write-Host "This script continues once the tunnel port is listening; ssh stays running in the background."
     Write-Host "Command: $SshCommand"
     Write-Host ""
-    & cmd.exe /c $SshCommand
-    if ($LASTEXITCODE -ne 0) {
-        Write-Error "SSH tunnel failed (exit code $LASTEXITCODE). Check credentials/VPN and retry."
-        exit 1
-    }
+    Start-Process -FilePath "cmd.exe" -ArgumentList @("/c", $SshCommand) -NoNewWindow | Out-Null
 }
 
 
