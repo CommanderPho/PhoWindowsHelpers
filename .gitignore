@@ -6,3 +6,4 @@ tools/comprehensive_context_menu_editor/hidden_entries
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+scripts/__pycache__/extract_supercomputer_VNC_info.cpython-313.pyc

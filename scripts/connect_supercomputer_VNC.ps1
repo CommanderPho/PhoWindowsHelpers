@@ -1,36 +1,53 @@
-# 1. Store the raw text block from your session
-$text = @"
-Download any VNC viewer, RealVNC is a good option.
-Copy/paste in your terminal to establish the SSH tunnel:
+param(
+    [Parameter(Mandatory = $true)]
+    [string]$SshCommand,
+    [Parameter(Mandatory = $true)]
+    [int]$LocalPort,
+    [Parameter(Mandatory = $true)]
+    [string]$VncPassword,
+    [string]$VncViewerPath = "${env:ProgramFiles}\RealVNC\VNC Viewer\vncviewer.exe"
+)
 
-ssh -f -N -L 22587:gl3039.arc-ts.umich.edu:5901 halechr@greatlakes.arc-ts.umich.edu
-For terminals in Windows you can use: Powershell, PuTTy and Windows Subsystem Linux distributions
+. "$PSScriptRoot\_supercomputer_VNC_tunnel_helpers.ps1"
 
-Open a VNC client and connect to localhost:22587 within the client
-Use the VNC password: rD35cTzZ
-"@
+$sshPattern = 'ssh -f -N -L (?<LocalPort>\d+):(?<RemoteHost>[^:]+):(?<RemotePort>\d+) (?<User>[^@]+)@(?<Gateway>\S+)'
 
-# 2. Define regex patterns to capture the specific variables
-$sshPattern = "ssh -f -N -L (?<LocalPort>\d+):(?<RemoteHost>[^:]+):(?<RemotePort>\d+) (?<User>[^@]+)@(?<Gateway>[^\s]+)"
-$passPattern = "Use the VNC password:\s*(?<Password>\S+)"
-
-# 3. Match and extract the details
-if ($text -match $sshPattern) {
-    $connectionInfo = [PSCustomObject]@{
-        LocalPort  = $Matches['LocalPort']
-        RemoteHost = $Matches['RemoteHost']
-        RemotePort = $Matches['RemotePort']
-        Username   = $Matches['User']
-        Gateway    = $Matches['Gateway']
-        VNCPassword = ""
-    }
-
-    if ($text -match $passPattern) {
-        $connectionInfo.VNCPassword = $Matches['Password']
-    }
-
-    # 4. Output the extracted data cleanly
-    $connectionInfo | Format-List
-} else {
-    Write-Warning "Could not parse connection information."
+if ($SshCommand -notmatch $sshPattern) {
+    Write-Error "Could not parse SSH command: $SshCommand"
+    exit 1
 }
+
+$remoteHost = $Matches['RemoteHost']
+$remotePort = $Matches['RemotePort']
+$username = $Matches['User']
+$gateway = $Matches['Gateway']
+
+if ([int]$Matches['LocalPort'] -ne $LocalPort) {
+    Write-Warning "LocalPort parameter ($LocalPort) differs from SSH command ($($Matches['LocalPort'])); using parameter value."
+}
+
+if (Stop-SshTunnelOnPort -LocalPort $LocalPort) {
+    Write-Host "Stopped existing SSH tunnel on port $LocalPort."
+}
+
+Write-Host "Starting SSH tunnel on port $LocalPort -> ${remoteHost}:${remotePort} via ${username}@${gateway} ..."
+Start-SshTunnelInteractive -SshCommand $SshCommand
+
+if (-not (Wait-SshTunnelReady -LocalPort $LocalPort -TimeoutSeconds 10)) {
+    Write-Error "SSH tunnel did not become ready on port $LocalPort after authentication. Auth may have succeeded but the tunnel failed to bind; retry or run manually in CMD: $SshCommand"
+    exit 1
+}
+
+Write-Host "SSH tunnel is listening on port $LocalPort."
+
+if (-not (Test-Path $VncViewerPath)) {
+    Write-Error "RealVNC Viewer not found at '$VncViewerPath'. Install from https://www.realvnc.com/en/connect/download/viewer/"
+    exit 1
+}
+
+Set-Clipboard -Value $VncPassword
+Write-Host "VNC password copied to clipboard. Paste it when RealVNC prompts for authentication."
+Write-Host "Launching RealVNC Viewer to localhost:$LocalPort ..."
+Start-Process $VncViewerPath -ArgumentList "localhost:$LocalPort"
+
+Write-Host "Done. SSH tunnel on port $LocalPort; VNC viewer launched."
