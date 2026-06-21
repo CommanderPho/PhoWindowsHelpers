@@ -3,3 +3,6 @@
 *.exe
 desktop.ini
 tools/comprehensive_context_menu_editor/hidden_entries
+# pixi environments
+.pixi/*
+!.pixi/config.toml

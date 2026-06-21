@@ -1,0 +1,11 @@
+[workspace]
+authors = ["Pho Hale <CommanderPho@users.noreply.github.com>"]
+channels = ["conda-forge"]
+name = "PhoWindowsHelpers"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+playwright = ">=1.61.0,<2"

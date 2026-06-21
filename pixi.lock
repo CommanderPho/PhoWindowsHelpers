@@ -1,0 +1,29 @@
+version: 6
+environments:
+  default:
+    channels:
+    - url: https://conda.anaconda.org/conda-forge/
+    options:
+      pypi-prerelease-mode: if-necessary-or-explicit
+    packages:
+      win-64:
+      - conda: https://conda.anaconda.org/conda-forge/win-64/nodejs-26.3.1-h80d1838_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/win-64/playwright-1.61.0-h8fff0a6_0.conda
+packages:
+- conda: https://conda.anaconda.org/conda-forge/win-64/nodejs-26.3.1-h80d1838_0.conda
+  sha256: afe4e1af9871fbd3c3352be5c3c1f3bfea3e539c2d6691a65fb5a8bbe5b92a49
+  md5: b04adc486681c3902022c07815949b02
+  license: MIT
+  license_family: MIT
+  size: 33826528
+  timestamp: 1781801075414
+- conda: https://conda.anaconda.org/conda-forge/win-64/playwright-1.61.0-h8fff0a6_0.conda
+  sha256: f0f3a8fb63271101b2f0629ab2197b026359f4759012b21cbd9c72a3a84362a3
+  md5: d3b9153380a75ded2baf5cbb8d93ff55
+  depends:
+  - nodejs
+  - nodejs >=26.3.0,<27.0a0
+  license: Apache-2.0
+  license_family: APACHE
+  size: 2744611
+  timestamp: 1781525919277
