@@ -1,3 +1,223 @@
 {
-  "hidden": {}
+  "hidden": {
+    "HKCR:Directory\\\\Background\\\\shell\\OpenWithMobaXterm": {
+      "id": "HKCR:Directory\\\\Background\\\\shell\\OpenWithMobaXterm",
+      "hive": "HKCR",
+      "path": "Directory\\\\Background\\\\shell\\OpenWithMobaXterm",
+      "display": "Open MobaXterm terminal here",
+      "file": "hidden_entries\\HKCR_Directory__Background__shell_OpenWithMobaXterm__12f77905-3898-47c1-8c7a-e5ecc6b73cc6.json"
+    },
+    "HKCR:Directory\\\\shell\\OpenWithMobaXterm": {
+      "id": "HKCR:Directory\\\\shell\\OpenWithMobaXterm",
+      "hive": "HKCR",
+      "path": "Directory\\\\shell\\OpenWithMobaXterm",
+      "display": "Open MobaXterm terminal here",
+      "file": "hidden_entries\\HKCR_Directory__shell_OpenWithMobaXterm__7fa1aab9-4fe0-47a3-b25a-723d1a1dd95b.json"
+    },
+    "HKCR:Drive\\\\shell\\OpenWithMobaXterm": {
+      "id": "HKCR:Drive\\\\shell\\OpenWithMobaXterm",
+      "hive": "HKCR",
+      "path": "Drive\\\\shell\\OpenWithMobaXterm",
+      "display": "Open MobaXterm terminal here",
+      "file": "hidden_entries\\HKCR_Drive__shell_OpenWithMobaXterm__1718e273-aa3a-49f3-b8fe-8d51446d48e6.json"
+    },
+    "HKCR:Directory\\\\Background\\\\shell\\Kiro": {
+      "id": "HKCR:Directory\\\\Background\\\\shell\\Kiro",
+      "hive": "HKCR",
+      "path": "Directory\\\\Background\\\\shell\\Kiro",
+      "display": "Open w&ith Kiro",
+      "file": "hidden_entries\\HKCR_Directory__Background__shell_Kiro__47b5ddad-1a5f-4791-89ce-bc84c6e01fbd.json"
+    },
+    "HKCR:Directory\\\\shell\\Kiro": {
+      "id": "HKCR:Directory\\\\shell\\Kiro",
+      "hive": "HKCR",
+      "path": "Directory\\\\shell\\Kiro",
+      "display": "Open w&ith Kiro",
+      "file": "hidden_entries\\HKCR_Directory__shell_Kiro__7db510ef-f7f8-483d-be38-a99e8778acc5.json"
+    },
+    "HKCR:Drive\\\\shell\\Kiro": {
+      "id": "HKCR:Drive\\\\shell\\Kiro",
+      "hive": "HKCR",
+      "path": "Drive\\\\shell\\Kiro",
+      "display": "Open w&ith Kiro",
+      "file": "hidden_entries\\HKCR_Drive__shell_Kiro__532f42aa-e97b-4bda-ba29-d427a7dcfa6c.json"
+    },
+    "HKCR:*\\\\shell\\open": {
+      "id": "HKCR:*\\\\shell\\open",
+      "hive": "HKCR",
+      "path": "*\\\\shell\\open",
+      "display": "Open with Graphic Walker",
+      "file": "hidden_entries\\HKCR____shell_open__b3f3e022-634a-46d0-9858-144c4eaa3c63.json"
+    },
+    "HKCR:Directory\\\\shell\\MicroDicom64": {
+      "id": "HKCR:Directory\\\\shell\\MicroDicom64",
+      "hive": "HKCR",
+      "path": "Directory\\\\shell\\MicroDicom64",
+      "display": "Open with MicroDicom DICOM Viewer (64-bit)",
+      "file": "hidden_entries\\HKCR_Directory__shell_MicroDicom64__7a3db1bd-bcf2-4d48-bb77-77346ca78bfc.json"
+    },
+    "HKCR:*\\\\shell\\MobaTextEditor": {
+      "id": "HKCR:*\\\\shell\\MobaTextEditor",
+      "hive": "HKCR",
+      "path": "*\\\\shell\\MobaTextEditor",
+      "display": "Edit with MobaTextEditor",
+      "file": "hidden_entries\\HKCR____shell_MobaTextEditor__ba91e58b-1c49-476a-ae24-c60a8bd9a304.json"
+    },
+    "HKCR:*\\\\shell\\OpenedFilesView": {
+      "id": "HKCR:*\\\\shell\\OpenedFilesView",
+      "hive": "HKCR",
+      "path": "*\\\\shell\\OpenedFilesView",
+      "display": "OpenedFilesView",
+      "file": "hidden_entries\\HKCR____shell_OpenedFilesView__bbddec98-8c0a-44dc-81c7-5e46960e9952.json"
+    },
+    "HKCR:Directory\\\\shell\\OpenedFilesView": {
+      "id": "HKCR:Directory\\\\shell\\OpenedFilesView",
+      "hive": "HKCR",
+      "path": "Directory\\\\shell\\OpenedFilesView",
+      "display": "OpenedFilesView",
+      "file": "hidden_entries\\HKCR_Directory__shell_OpenedFilesView__4d4856c6-e2ba-46c3-8844-bea9acb74514.json"
+    },
+    "HKCR:Directory\\\\Background\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN": {
+      "id": "HKCR:Directory\\\\Background\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN",
+      "hive": "HKCR",
+      "path": "Directory\\\\Background\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN",
+      "display": "-{30351349-7B7D-4FCC-81B4-1E394CA267EB}",
+      "file": "hidden_entries\\HKCR_Directory__Background__shellex__ContextMenuHandlers_TortoiseSVN__521f73f1-4c0f-4b97-b4f1-f15b69add11d.json"
+    },
+    "HKCR:Directory\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN": {
+      "id": "HKCR:Directory\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN",
+      "hive": "HKCR",
+      "path": "Directory\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN",
+      "display": "-{30351349-7B7D-4FCC-81B4-1E394CA267EB}",
+      "file": "hidden_entries\\HKCR_Directory__shellex__ContextMenuHandlers_TortoiseSVN__a93fdb2d-4e1b-4b8c-818f-882253961cba.json"
+    },
+    "HKCR:Drive\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN": {
+      "id": "HKCR:Drive\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN",
+      "hive": "HKCR",
+      "path": "Drive\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN",
+      "display": "-{30351349-7B7D-4FCC-81B4-1E394CA267EB}",
+      "file": "hidden_entries\\HKCR_Drive__shellex__ContextMenuHandlers_TortoiseSVN__dada02ea-4317-40a5-979c-a273b00f5604.json"
+    },
+    "HKCR:Folder\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN": {
+      "id": "HKCR:Folder\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN",
+      "hive": "HKCR",
+      "path": "Folder\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN",
+      "display": "-{30351349-7B7D-4FCC-81B4-1E394CA267EB}",
+      "file": "hidden_entries\\HKCR_Folder__shellex__ContextMenuHandlers_TortoiseSVN__f8d86c16-155c-440c-9617-43b3c6f3db87.json"
+    },
+    "HKCR:*\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN": {
+      "id": "HKCR:*\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN",
+      "hive": "HKCR",
+      "path": "*\\\\shellex\\\\ContextMenuHandlers\\TortoiseSVN",
+      "display": "-{30351349-7B7D-4FCC-81B4-1E394CA267EB}",
+      "file": "hidden_entries\\HKCR____shellex__ContextMenuHandlers_TortoiseSVN__1bd86061-5665-469e-8c05-b2dcea88989b.json"
+    },
+    "HKCR:*\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)": {
+      "id": "HKCR:*\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)",
+      "hive": "HKCR",
+      "path": "*\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)",
+      "display": "-{0229E5E7-09E9-45CF-9228-0228EC7D5F17}",
+      "file": "hidden_entries\\HKCR____shellex__ContextMenuHandlers_MEGA__Context_menu___2b62ba55-d20c-4880-96b1-b66252e54784.json"
+    },
+    "HKCR:AllFileSystemObjects\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)": {
+      "id": "HKCR:AllFileSystemObjects\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)",
+      "hive": "HKCR",
+      "path": "AllFileSystemObjects\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)",
+      "display": "[CC]{0229E5E7-09E9-45CF-9228-0228EC7D5F17}",
+      "file": "hidden_entries\\HKCR_AllFileSystemObjects__shellex__ContextMenuHandlers_MEGA__Context_menu___2a03c992-b72c-45f6-bb78-0e541c2a9133.json"
+    },
+    "HKCR:Directory\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)": {
+      "id": "HKCR:Directory\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)",
+      "hive": "HKCR",
+      "path": "Directory\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)",
+      "display": "[CC]{0229E5E7-09E9-45CF-9228-0228EC7D5F17}",
+      "file": "hidden_entries\\HKCR_Directory__shellex__ContextMenuHandlers_MEGA__Context_menu___bad6e6a5-309d-4c5e-ab4f-1ec38d506a20.json"
+    },
+    "HKCR:Drive\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)": {
+      "id": "HKCR:Drive\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)",
+      "hive": "HKCR",
+      "path": "Drive\\\\shellex\\\\ContextMenuHandlers\\MEGA (Context menu)",
+      "display": "[CC]{0229E5E7-09E9-45CF-9228-0228EC7D5F17}",
+      "file": "hidden_entries\\HKCR_Drive__shellex__ContextMenuHandlers_MEGA__Context_menu___e637e7a1-77a3-4785-bb70-36392754b65f.json"
+    },
+    "HKCR:Drive\\\\shellex\\\\ContextMenuHandlers\\IconPackager": {
+      "id": "HKCR:Drive\\\\shellex\\\\ContextMenuHandlers\\IconPackager",
+      "hive": "HKCR",
+      "path": "Drive\\\\shellex\\\\ContextMenuHandlers\\IconPackager",
+      "display": "[CC]{2CF9036B-F720-425F-918C-03A336A65FC4}",
+      "file": "hidden_entries\\HKCR_Drive__shellex__ContextMenuHandlers_IconPackager__5d6fe84d-0991-41b3-a58c-9b74e2e088a1.json"
+    },
+    "HKCR:*\\\\shellex\\\\ContextMenuHandlers\\GitExtensions2": {
+      "id": "HKCR:*\\\\shellex\\\\ContextMenuHandlers\\GitExtensions2",
+      "hive": "HKCR",
+      "path": "*\\\\shellex\\\\ContextMenuHandlers\\GitExtensions2",
+      "display": "[CC]{3C16B20A-BA16-4156-916F-0A375ECFFE24}",
+      "file": "hidden_entries\\HKCR____shellex__ContextMenuHandlers_GitExtensions2__c82f43b6-63b2-43ec-ab44-b7ac104e3da6.json"
+    },
+    "HKCR:Directory\\\\shellex\\\\ContextMenuHandlers\\GitExtensions2": {
+      "id": "HKCR:Directory\\\\shellex\\\\ContextMenuHandlers\\GitExtensions2",
+      "hive": "HKCR",
+      "path": "Directory\\\\shellex\\\\ContextMenuHandlers\\GitExtensions2",
+      "display": "[CC]{3C16B20A-BA16-4156-916F-0A375ECFFE24}",
+      "file": "hidden_entries\\HKCR_Directory__shellex__ContextMenuHandlers_GitExtensions2__c29c36ff-b58e-4b02-b780-2236b254c9ff.json"
+    },
+    "HKCR:Directory\\\\Background\\\\shell\\Browse path with PeaZip": {
+      "id": "HKCR:Directory\\\\Background\\\\shell\\Browse path with PeaZip",
+      "hive": "HKCR",
+      "path": "Directory\\\\Background\\\\shell\\Browse path with PeaZip",
+      "display": "Browse path with PeaZip",
+      "file": "hidden_entries\\HKCR_Directory__Background__shell_Browse_path_with_PeaZip__2ab1e105-7a4b-4d43-afda-08e1a96ef38e.json"
+    },
+    "HKCR:*\\\\shell\\MobaDiff": {
+      "id": "HKCR:*\\\\shell\\MobaDiff",
+      "hive": "HKCR",
+      "path": "*\\\\shell\\MobaDiff",
+      "display": "Compare using MobaDiff",
+      "file": "hidden_entries\\HKCR____shell_MobaDiff__8103db38-0c15-4ebf-ae44-3aece24af6e1.json"
+    },
+    "HKCR:Directory\\\\shell\\MobaDiff": {
+      "id": "HKCR:Directory\\\\shell\\MobaDiff",
+      "hive": "HKCR",
+      "path": "Directory\\\\shell\\MobaDiff",
+      "display": "Compare using MobaDiff",
+      "file": "hidden_entries\\HKCR_Directory__shell_MobaDiff__c52ec3dd-a3fc-466b-9807-6d1816974708.json"
+    },
+    "HKCR:Directory\\\\shell\\disksavvy": {
+      "id": "HKCR:Directory\\\\shell\\disksavvy",
+      "hive": "HKCR",
+      "path": "Directory\\\\shell\\disksavvy",
+      "display": "Disk Savvy - Analyze Disk Space ...",
+      "file": "hidden_entries\\HKCR_Directory__shell_disksavvy__4f9ae733-2fb3-4579-9cd7-e6acf4048108.json"
+    },
+    "HKCR:Drive\\\\shell\\disksavvy": {
+      "id": "HKCR:Drive\\\\shell\\disksavvy",
+      "hive": "HKCR",
+      "path": "Drive\\\\shell\\disksavvy",
+      "display": "Disk Savvy - Analyze Disk Space ...",
+      "file": "hidden_entries\\HKCR_Drive__shell_disksavvy__a3f13a63-2154-45d6-bc4e-1ace5b41036e.json"
+    },
+    "HKCR:Folder\\\\shell\\disksavvy": {
+      "id": "HKCR:Folder\\\\shell\\disksavvy",
+      "hive": "HKCR",
+      "path": "Folder\\\\shell\\disksavvy",
+      "display": "Disk Savvy - Analyze Disk Space ...",
+      "file": "hidden_entries\\HKCR_Folder__shell_disksavvy__b803c6ef-2ad0-4d4f-aac1-3a012e61b831.json"
+    },
+    "HKCR:Directory\\\\Background\\\\shell\\AnyCode": {
+      "id": "HKCR:Directory\\\\Background\\\\shell\\AnyCode",
+      "hive": "HKCR",
+      "path": "Directory\\\\Background\\\\shell\\AnyCode",
+      "display": "@C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\MSEnv\\1033\\VSLauncherUI.dll,-1002",
+      "icon_spec": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\MSEnv\\VSLauncher.exe,-105",
+      "file": "hidden_entries\\HKCR_Directory__Background__shell_AnyCode__bb1c342a-56c9-48eb-8d10-07886760b601.json"
+    },
+    "HKCR:Directory\\\\shell\\AnyCode": {
+      "id": "HKCR:Directory\\\\shell\\AnyCode",
+      "hive": "HKCR",
+      "path": "Directory\\\\shell\\AnyCode",
+      "display": "@C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\MSEnv\\1033\\VSLauncherUI.dll,-1002",
+      "icon_spec": "C:\\Program Files (x86)\\Common Files\\Microsoft Shared\\MSEnv\\VSLauncher.exe,-105",
+      "file": "hidden_entries\\HKCR_Directory__shell_AnyCode__74ffd973-c771-40f3-9bfd-ccea3c0b73f6.json"
+    }
+  }
 }
