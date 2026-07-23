@@ -21,7 +21,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from .fastcopy_tool import CopyResult, FastCopyConfig, FastCopyRunner
+from .fastcopy_tool import CopyResult, FastCopyConfig, FastCopyRunner, is_admin
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -33,6 +33,7 @@ def build_parser() -> argparse.ArgumentParser:
             "Examples:\n"
             '  %(prog)s --dry-run "D:\\Photos\\2024" "E:\\Backup\\Photos"\n'
             '  %(prog)s --mode move "D:\\Downloads\\*.iso" "E:\\ISOs"\n'
+            '  %(prog)s --mode symlink "C:\\Data\\BigFolder" "D:\\Archive"\n'
             '  %(prog)s --exclude "*.tmp;thumbs.db" "C:\\Src1" "C:\\Src2" "D:\\Dest"\n'
         ),
     )
@@ -45,9 +46,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     parser.add_argument(
         "--mode",
-        choices=["copy", "move"],
+        choices=["copy", "move", "symlink"],
         default="copy",
-        help="Operation mode (default: copy).",
+        help="Operation mode: copy (default), move, or symlink (copy + replace source with symlink).",
     )
 
     parser.add_argument(
@@ -170,9 +171,18 @@ def run_cli(argv: list[str] | None = None) -> int:
     # Show the command being run
     print(f"Command: {runner.build_command_string()}\n")
 
-    # -- move-mode safety reminder --
-    if config.mode == "move" and not config.dry_run:
-        if config.effective_verify():
+    # -- move/symlink safety reminder --
+    if config.is_destructive and not config.dry_run:
+        if config.mode == "symlink":
+            print("NOTE: Symlink mode will:")
+            print("  1. Copy files to the destination")
+            print("  2. Delete the originals")
+            print("  3. Create symlinks at the original locations → destination")
+            if not is_admin():
+                print("\nWARNING: Symlink creation typically requires Administrator")
+                print("         privileges on Windows. Consider running as admin.")
+            print()
+        elif config.effective_verify():
             print("NOTE: Verify is enabled for move mode. Source files will")
             print("      only be deleted after successful copy + verification.\n")
         else:
@@ -182,13 +192,24 @@ def run_cli(argv: list[str] | None = None) -> int:
 
     # -- execute --
     print("--- Output ---")
-    result: CopyResult = runner.run(on_output=_print_line)
+    if config.dry_run:
+        result: CopyResult = runner.run_dry_run(on_output=_print_line)
+    elif config.mode == "symlink":
+        result: CopyResult = runner.run_with_symlink(on_output=_print_line)
+    else:
+        result: CopyResult = runner.run(on_output=_print_line)
     print("--- End ---\n")
 
     # -- summary --
     status = "SUCCESS" if result.success else "FAILED"
     print(f"Status:  {status} (exit code {result.return_code})")
     print(f"Elapsed: {result.elapsed_seconds:.1f}s")
+
+    # -- symlink summary --
+    if result.symlink_results:
+        ok = sum(1 for s in result.symlink_results if s.success)
+        fail = len(result.symlink_results) - ok
+        print(f"Symlinks: {ok} created, {fail} failed")
 
     return 0 if result.success else 1
 

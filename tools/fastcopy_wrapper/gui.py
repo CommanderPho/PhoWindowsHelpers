@@ -15,7 +15,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, scrolledtext, ttk
 from typing import Optional
 
-from .fastcopy_tool import CopyResult, FastCopyConfig, FastCopyRunner, find_fastcopy_exe
+from .fastcopy_tool import CopyResult, FastCopyConfig, FastCopyRunner, find_fastcopy_exe, is_admin
 
 # ---------------------------------------------------------------------------
 # Color palette
@@ -242,7 +242,7 @@ class FastCopyGUI:
         rb_frame = tk.Frame(mode_frame, bg=_BG_CARD)
         rb_frame.pack(anchor="w")
 
-        for text, val in [("Copy", "copy"), ("Move", "move")]:
+        for text, val in [("Copy", "copy"), ("Move", "move"), ("Move + Symlink", "symlink")]:
             rb = tk.Radiobutton(
                 rb_frame, text=text, variable=self._mode_var, value=val,
                 bg=_BG_CARD, fg=_FG, selectcolor=_BG_INPUT,
@@ -285,7 +285,8 @@ class FastCopyGUI:
         speed_combo.pack()
 
     def _on_mode_change(self) -> None:
-        if self._mode_var.get() == "move":
+        mode = self._mode_var.get()
+        if mode in ("move", "symlink"):
             self._verify_var.set(True)
         # Don't force-uncheck when switching back to copy
 
@@ -437,15 +438,34 @@ class FastCopyGUI:
         if config is None:
             return
 
-        # Move mode confirmation
-        if config.mode == "move" and not config.dry_run:
-            if not messagebox.askyesno(
-                "Confirm Move",
-                "Move mode will DELETE source files after successful copy.\n\n"
-                f"Verify: {'ON' if config.effective_verify() else 'OFF'}\n\n"
-                "Continue?",
-            ):
-                return
+        # Destructive mode confirmation
+        if config.is_destructive and not config.dry_run:
+            if config.mode == "symlink":
+                admin_warning = ""
+                if not is_admin():
+                    admin_warning = (
+                        "\n⚠ Not running as Administrator.\n"
+                        "Symlink creation may fail without admin privileges.\n"
+                    )
+                if not messagebox.askyesno(
+                    "Confirm Move + Symlink",
+                    "Symlink mode will:\n"
+                    "  1. Copy files to the destination\n"
+                    "  2. Delete the originals\n"
+                    "  3. Create symlinks at the original locations\n\n"
+                    f"Verify: {'ON' if config.effective_verify() else 'OFF'}\n"
+                    f"{admin_warning}\n"
+                    "Continue?",
+                ):
+                    return
+            else:  # move
+                if not messagebox.askyesno(
+                    "Confirm Move",
+                    "Move mode will DELETE source files after successful copy.\n\n"
+                    f"Verify: {'ON' if config.effective_verify() else 'OFF'}\n\n"
+                    "Continue?",
+                ):
+                    return
 
         self._run_fastcopy(config)
 
@@ -485,19 +505,32 @@ class FastCopyGUI:
         def _output_callback(line: str) -> None:
             if not self._running:
                 return
-            # Color listing lines
+            # Color listing / output lines
             tag = "info"
             stripped = line.lstrip()
             if stripped.startswith("+"):
                 tag = "add"
             elif stripped.startswith("-"):
                 tag = "remove"
-            elif "error" in line.lower() or "ERROR" in line:
+            elif stripped.startswith("🔗"):
+                tag = "accent"
+            elif stripped.startswith("⚠") or "WARNING" in line:
+                tag = "warning"
+            elif stripped.startswith("❌") or "ERROR" in line or "error" in line.lower():
                 tag = "error"
             self._append_output(line, tag)
 
         def _worker() -> None:
-            result: CopyResult = runner.run(on_output=_output_callback)
+            if config.dry_run:
+                result: CopyResult = runner.run_dry_run(
+                    on_output=_output_callback,
+                )
+            elif config.mode == "symlink":
+                result: CopyResult = runner.run_with_symlink(
+                    on_output=_output_callback,
+                )
+            else:
+                result: CopyResult = runner.run(on_output=_output_callback)
 
             # Summary
             if result.success:
